@@ -1,0 +1,41 @@
+Collection framework hierarchy ::
+
+									Collection (I)
+							 List(I)				Set(I)
+												 SortedSet(I)
+												 
+InterfaceName						className								Hierarchy
+----------------------------------------------------------------------------------------------
+
+Collection --------------> AbstractCollection <---- implements ------ Collection
+
+List---------------------> AbstractList <---------- extends --------- AbstractCollection
+									|
+									----------------implements ------ List
+									
+Set ---------------------> AbstractSet ----------implements---------- Set
+                                    |
+                                    ------------- extends ----------Abstract Collection
+SortedSet ---------------implements--------------Set
+
+						AbstractSequentialList ---- extends AbstractCollection
+					
+
+					
+		LinkedList
+		            ---------} AbstractList
+		ArrayList 
+		
+		HashSet -------------} AbstractSet
+		
+		TreeSet -------------} AbstractSet
+		   |
+		   ------------------} SorteSet
+		   
+		   
+---------------------------------------------------------------------------------------------------------		   
+		   
+		   
+		   
+		   
+		   

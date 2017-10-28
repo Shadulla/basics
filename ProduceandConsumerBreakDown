@@ -1,0 +1,84 @@
+Producer and consumer problem breakDown
+
+1) created a shared resource
+
+2) created a producer 
+
+class Producer implementing Runnable
+{
+   List<Integer> sharedResource;
+   int i = 0;
+   int MAX_SIZE =5;
+	@Override
+	public void run()
+	{
+		while(true)
+		{
+			produce(i++);
+		}
+	}
+	
+	public void produce(int i)
+	{
+		System.out.println("Entered the producer ");
+		
+		// WAIT EXECUTING THIS
+		synchronized(sharedRedource)
+		{
+			// if the count is 5 then this wont get executed
+			while(sharedResource.getSize() == MAX_SIXE)
+			{
+				// wait for the consumer to consume this please
+				sharedResource.add(i);
+				sharedResource.wait();
+			}
+		}
+		
+		//Notify executing this
+		synchronized(sharedRedource)
+		{
+		// notify them to execute this
+		Thread.sleep(1000);
+		sharedResource.notify();
+		}	
+	}
+	
+}
+
+
+
+
+
+
+
+3) created a consumer
+
+class Consumer implements Runnable 
+{
+List<Integer> sharedResource;
+	public void run()
+	{
+		while(true)
+		{
+			consume();
+		}
+	}
+	
+	public void consume()
+	{
+		synchronized(sharedResource)
+		{
+			while(shareedResource.isEmpty())
+			{
+		 	// wait for the consumer therad to consume pleas
+		 		sharedResource.wait();
+			}
+		}
+		synchronized(sharedResource)
+		{
+			sharedResource.remove(0);
+			Thread.sleep(1000);
+			sharedResource.notify();
+		}
+	}
+}

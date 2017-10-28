@@ -1,0 +1,10 @@
+hash map internally working 
+----------------------------
+
+hashing principle
+
+Map.Entry<String,String>
+
+hashcode ---
+
+equals() --
