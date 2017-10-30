@@ -1,0 +1,3 @@
+if two objects are equal then they should have same hashcode its pakka
+
+if two hashcodes are equal they may or may not be equal

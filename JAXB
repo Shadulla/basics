@@ -1,0 +1,16 @@
+Jax B marsheller and un marshller
+
+File file = new File("File.txt");
+JAXBContext context =JAXBcontext.newInstance();
+Marshller marshel = context.createMashller();
+
+
+marshell.setProperty()
+
+
+
+---------------------------------------->
+
+maven-archetype-webapp
+
+"mvn eclipse:eclipse -Dwtpversion=1.5"
